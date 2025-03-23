@@ -1,14 +1,17 @@
 ---
-
+import Logo from "./Icons/Logo.astro";
 ---
 
 <nav
   class="w-screen flex justify-center items-center p-5 sticky top-0 z-50 backdrop-blur-sm bg-white/10"
 >
-  <div class="flex justify-between w-full max-w-7xl px-4">
-    <div class="flex items-center">
-      <a href="/" class="text-xl font-bold">IM</a>
-    </div>
+  <div class="flex items-center justify-between w-full max-w-7xl px-4">
+    <a
+      href="#"
+      class="hidden md:block text-black hover:text-gray-700 transition-colors"
+    >
+      <img src="/logo-favicon-black.svg" alt="Logo" class="w-12 h-12" />
+    </a>
 
     <!-- Desktop Menu -->
     <ul class="hidden md:flex flex-row gap-8">
@@ -33,7 +36,10 @@
     </ul>
 
     <!-- Mobile Menu Button -->
-    <button id="mobile-menu-button" class="md:hidden">
+    <button
+      id="mobile-menu-button"
+      class="md:hidden text-black hover:text-gray-700"
+    >
       <svg
         class="w-6 h-6"
         fill="none"
@@ -52,6 +58,24 @@
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-40 md:hidden">
     <div class="flex flex-col items-center justify-center h-full space-y-8">
+      <button
+        onclick="document.getElementById('mobile-menu').classList.add('hidden')"
+        class="absolute top-4 right-4 text-black hover:text-gray-700"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
       <a class="text-xl font-light hover:text-gray-600" href="#work">Work</a>
       <a class="text-xl font-light hover:text-gray-600" href="#about-me"
         >About</a

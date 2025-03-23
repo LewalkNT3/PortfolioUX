@@ -13,7 +13,7 @@ import Github from "./Icons/Github.astro";
 >
   <div class="max-w-7xl w-full flex items-center justify-center flex-col">
     <h1
-      class="text-white text-4xl md:text-5xl font-bold mb-12 text-center"
+      class="text-3xl md:text-5xl text-white font-bold mb-12 text-center"
       data-aos="fade-down"
     >
       My Works
@@ -24,7 +24,7 @@ import Github from "./Icons/Github.astro";
         data-aos="fade-right"
         data-aos-delay="200"
         class="col-span-3 row-span-3 rounded-2xl bg-zinc-900 border border-zinc-800 transition-all hover:border-zinc-600 flex items-center justify-center cursor-pointer relative group"
-        onclick="document.getElementById('projectModal').classList.remove('hidden')"
+        data-project="projectModal"
       >
         <img
           src="/TrynessfotoEj.png"
@@ -40,7 +40,7 @@ import Github from "./Icons/Github.astro";
         data-aos="fade-right"
         data-aos-delay="400"
         class="col-span-3 row-span-2 col-start-1 row-start-4 rounded-2xl bg-zinc-900 border border-zinc-800 transition-all hover:border-zinc-600 flex items-center justify-center cursor-pointer relative group"
-        onclick="document.getElementById('projectModal2').classList.remove('hidden')"
+        data-project="projectModal2"
       >
         <img
           src="NoseAI.png"
@@ -56,7 +56,7 @@ import Github from "./Icons/Github.astro";
         data-aos="fade-left"
         data-aos-delay="600"
         class="col-span-2 row-span-5 col-start-4 row-start-1 rounded-2xl bg-zinc-900 border border-zinc-800 p-6 transition-all hover:border-zinc-600 flex items-center justify-center cursor-pointer relative group"
-        onclick="document.getElementById('projectModal3').classList.remove('hidden')"
+        data-project="projectModal3"
       >
         <div
           class="w-full h-full bg-zinc-800 rounded-2xl transition-all duration-300 group-hover:brightness-50 flex items-center justify-center"
@@ -72,7 +72,7 @@ import Github from "./Icons/Github.astro";
         data-aos="fade-up"
         data-aos-delay="200"
         class="w-full aspect-[4/3] rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center cursor-pointer relative"
-        onclick="document.getElementById('projectModal').classList.remove('hidden')"
+        data-project="projectModal"
       >
         <img
           src="/TrynessfotoEj.png"
@@ -86,7 +86,7 @@ import Github from "./Icons/Github.astro";
         data-aos="fade-up"
         data-aos-delay="400"
         class="w-full aspect-[4/3] rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center cursor-pointer relative"
-        onclick="document.getElementById('projectModal2').classList.remove('hidden')"
+        data-project="projectModal2"
       >
         <img src="NoseAI.png" class="w-full h-full object-cover rounded-2xl" />
         <h3 class="absolute bottom-5 left-5 text-white text-3xl font-bold">
@@ -97,7 +97,7 @@ import Github from "./Icons/Github.astro";
         data-aos="fade-up"
         data-aos-delay="600"
         class="w-full aspect-[4/3] rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center cursor-pointer relative"
-        onclick="document.getElementById('projectModal3').classList.remove('hidden')"
+        data-project="projectModal3"
       >
         <div
           class="w-full h-full bg-zinc-800 rounded-2xl flex items-center justify-center"
@@ -111,11 +111,13 @@ import Github from "./Icons/Github.astro";
   <!-- Modal 1 -->
   <div
     id="projectModal"
-    class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm hidden z-50 flex items-center justify-center"
+    class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm hidden z-50 flex items-center justify-center overflow-y-auto"
   >
-    <div class="bg-zinc-900 rounded-2xl p-8 w-full max-w-5xl mx-4 relative">
+    <div
+      class="bg-zinc-900 rounded-2xl p-4 md:p-8 w-full max-w-5xl mx-4 my-8 relative"
+    >
       <button
-        onclick="document.getElementById('projectModal').classList.add('hidden')"
+        data-close-modal="projectModal"
         class="absolute top-4 right-4 text-white hover:text-gray-300"
       >
         <svg
@@ -132,15 +134,18 @@ import Github from "./Icons/Github.astro";
             d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
-      <h2 class="text-5xl font-bold text-white mt-5">Tryness Project</h2>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mt-5">
+        Tryness Project
+      </h2>
       <div class="h-[1px] bg-zinc-800 w-full my-7"></div>
-      <div class="flex flex-row gap-10">
+      <div class="flex flex-col md:flex-row gap-6 md:gap-10">
         <img
           src="/TrynessfotoEj.png"
-          class="w-full h-64 object-cover rounded-xl mb-6"
+          class="w-full md:w-1/3 h-48 md:h-64 object-cover rounded-xl"
         />
-        <div class="flex flex-col gap-4">
-          <label for="" class="font-bold text-white text-4xl">Description</label
+        <div class="flex flex-col gap-4 w-full md:w-1/3">
+          <label class="font-bold text-white text-2xl md:text-4xl"
+            >Description</label
           >
           <div class="w-[55%] h-[1px] bg-zinc-800"></div>
           <p class="text-gray-300 mb-4">
@@ -149,12 +154,12 @@ import Github from "./Icons/Github.astro";
             implemented.
           </p>
         </div>
-        <div class="flex flex-col gap-4 mt-0">
-          <label for="" class="font-bold text-white text-4xl"
+        <div class="flex flex-col gap-4 w-full md:w-1/3">
+          <label class="font-bold text-white text-2xl md:text-4xl"
             >Technologies</label
           >
           <div class="w-[55%] h-[1px] bg-zinc-800"></div>
-          <ul class="text-white text-xl">
+          <ul class="text-white text-lg md:text-xl">
             <li class="flex flex-row gap-6 items-center">
               <Figma />
               <p>Figma</p>
@@ -171,8 +176,9 @@ import Github from "./Icons/Github.astro";
         </div>
       </div>
       <button
-        onclick="document.getElementById('projectDrawer').classList.toggle('translate-y-full'); document.getElementById('drawerOverlay').classList.toggle('hidden')"
-        class="bg-zinc-800 text-white px-4 py-2 hover:bg-zinc-700 transition-colors w-full text-start flex flex-row gap-2 items-center"
+        data-drawer="projectDrawer"
+        data-overlay="drawerOverlay"
+        class="bg-zinc-800 text-white px-4 py-3 mt-6 hover:bg-zinc-700 transition-colors w-full text-start flex flex-row gap-2 items-center rounded-md"
       >
         <MoreInfo />
         More Info
@@ -182,17 +188,19 @@ import Github from "./Icons/Github.astro";
       <div
         id="drawerOverlay"
         class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm hidden z-40"
-        onclick="document.getElementById('projectDrawer').classList.add('translate-y-full'); this.classList.add('hidden')"
+        data-close-overlay="drawerOverlay"
       >
       </div>
 
       <!-- Drawer -->
       <div
         id="projectDrawer"
-        class="fixed bottom-0 left-0 w-full bg-zinc-900 transform translate-y-full transition-transform duration-300 ease-in-out p-8 shadow-lg z-50"
+        class="fixed bottom-0 left-0 w-full bg-zinc-900 transform translate-y-full transition-transform duration-300 ease-in-out p-4 md:p-8 shadow-lg z-50 max-h-[90vh] overflow-y-auto"
+        data-close-drawer="projectDrawer"
       >
         <button
-          onclick="document.getElementById('projectDrawer').classList.add('translate-y-full'); document.getElementById('drawerOverlay').classList.add('hidden')"
+          data-close-drawer="projectDrawer"
+          data-close-overlay="drawerOverlay"
           class="absolute top-4 right-4 text-white hover:text-gray-300"
         >
           <svg
@@ -210,13 +218,13 @@ import Github from "./Icons/Github.astro";
           </svg>
         </button>
 
-        <h3 class="text-5xl font-bold text-white mb-2 self-start">
+        <h3 class="text-3xl md:text-5xl font-bold text-white mb-2">
           Project Details
         </h3>
         <div class="w-[45%] h-[1px] bg-zinc-800 my-5"></div>
-        <div class="space-y-4">
-          <div class="flex flex-row gap-10">
-            <div class="flex flex-col gap-4 w-[50%]">
+        <div class="space-y-6">
+          <div class="flex flex-col md:flex-row gap-8 md:gap-10">
+            <div class="flex flex-col gap-6 w-full md:w-1/2">
               <div>
                 <h4 class="text-xl font-semibold text-white">Timeline</h4>
                 <div class="w-[45%] h-[1px] bg-zinc-800"></div>
@@ -230,25 +238,23 @@ import Github from "./Icons/Github.astro";
                 <div class="w-[45%] h-[1px] bg-zinc-800"></div>
                 <p class="text-gray-300 my-3">UI/UX Designer</p>
               </div>
-              <div class="flex flex-row gap-10">
-                <div class="w-[80%]">
-                  <h4 class="text-xl font-semibold text-white">Key Features</h4>
-                  <div class="w-[55%] h-[1px] bg-zinc-800"></div>
-                  <ul class="text-gray-300 list-disc list-inside my-3">
-                    <li>Responsive Design</li>
-                    <li>Modern UI Components</li>
-                    <li>User-Centered Approach</li>
-                  </ul>
-                </div>
+              <div>
+                <h4 class="text-xl font-semibold text-white">Key Features</h4>
+                <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+                <ul class="text-gray-300 list-disc list-inside my-3">
+                  <li>Responsive Design</li>
+                  <li>Modern UI Components</li>
+                  <li>User-Centered Approach</li>
+                </ul>
               </div>
             </div>
-            <div class="w-[50%] flex flex-col gap-4">
+            <div class="w-full md:w-1/2 flex flex-col gap-6">
               <div>
-                <h1 class="text-white text-xl font-bold">
+                <h1 class="text-xl font-bold text-white">
                   Detailed Description
                 </h1>
                 <div class="w-[55%] h-[1px] bg-zinc-800"></div>
-                <p class="text-gray-300 text-sm my-6 w-[90%] text-balance">
+                <p class="text-gray-300 text-sm my-6 text-balance">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Quisquam voluptates, quod, quia, voluptate quae voluptatibus
                   quibusdam voluptatem quas quidem quos. Quisquam, voluptates.
@@ -257,12 +263,20 @@ import Github from "./Icons/Github.astro";
                   Quisquam, voluptates. Quia, voluptate.
                 </p>
               </div>
-              <div class="">
-                <h1 class="text-white text-xl font-bold">Links</h1>
+              <div>
+                <h1 class="text-xl font-bold text-white">Links</h1>
                 <div class="w-[55%] h-[1px] bg-zinc-800"></div>
                 <div class="flex flex-row gap-4 my-3">
-                  <a href="#" class="text-gray-300 text-sm"><Link /></a>
-                  <a href="#" class="text-gray-300 text-sm"><Github /></a>
+                  <a
+                    href="#"
+                    class="text-gray-300 hover:text-white transition-colors"
+                    ><Link /></a
+                  >
+                  <a
+                    href="#"
+                    class="text-gray-300 hover:text-white transition-colors"
+                    ><Github /></a
+                  >
                 </div>
               </div>
             </div>
@@ -275,16 +289,18 @@ import Github from "./Icons/Github.astro";
   <!-- Modal 2 -->
   <div
     id="projectModal2"
-    class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm hidden z-50 flex items-center justify-center"
+    class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm hidden z-50 flex items-start md:items-center justify-center overflow-y-auto"
   >
-    <div class="bg-zinc-900 rounded-2xl p-8 w-full max-w-5xl mx-4 relative">
+    <div
+      class="bg-zinc-900 rounded-2xl p-3 md:p-8 w-full max-w-5xl mx-2 md:mx-4 my-2 md:my-4 relative"
+    >
       <button
-        onclick="document.getElementById('projectModal2').classList.add('hidden')"
-        class="absolute top-4 right-4 text-white hover:text-gray-300"
+        data-close-modal="projectModal2"
+        class="absolute top-2 right-2 md:top-4 md:right-4 text-white hover:text-gray-300"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
+          class="h-5 w-5 md:h-6 md:w-6"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -296,38 +312,41 @@ import Github from "./Icons/Github.astro";
             d="M6 18L18 6M6 6l12 12"></path>
         </svg>
       </button>
-      <h2 class="text-5xl font-bold text-white mt-5">NoseAI Project</h2>
-      <div class="h-[1px] bg-zinc-800 w-full my-7"></div>
-      <div class="flex flex-row gap-10">
+      <h2 class="text-2xl md:text-5xl font-bold text-white mt-3 md:mt-5">
+        NoseAI Project
+      </h2>
+      <div class="h-[1px] bg-zinc-800 w-full my-4 md:my-7"></div>
+      <div class="flex flex-col md:flex-row gap-4 md:gap-10">
         <img
           src="NoseAI.png"
-          class="w-full h-48 object-cover rounded-xl mb-6"
+          class="w-full md:w-1/3 h-36 md:h-64 object-cover rounded-xl"
         />
-        <div class="flex flex-col gap-4">
-          <label for="" class="font-bold text-white text-4xl">Description</label
+        <div class="flex flex-col gap-3 md:gap-4 w-full md:w-1/3">
+          <label class="font-bold text-white text-lg md:text-4xl"
+            >Description</label
           >
           <div class="w-[55%] h-[1px] bg-zinc-800"></div>
-          <p class="text-gray-300 mb-4">
+          <p class="text-gray-300 text-sm md:text-base mb-2 md:mb-4">
             Description of the NoseAI project goes here. You can add details
             about the technologies used, the challenges faced, and the solutions
             implemented.
           </p>
         </div>
-        <div class="flex flex-col gap-4 mt-0">
-          <label for="" class="font-bold text-white text-4xl"
+        <div class="flex flex-col gap-3 md:gap-4 w-full md:w-1/3">
+          <label class="font-bold text-white text-lg md:text-4xl"
             >Technologies</label
           >
           <div class="w-[55%] h-[1px] bg-zinc-800"></div>
-          <ul class="text-white text-xl">
-            <li class="flex flex-row gap-6 items-center">
+          <ul class="text-white text-sm md:text-xl">
+            <li class="flex flex-row gap-4 md:gap-6 items-center">
               <Figma />
               <p>Figma</p>
             </li>
-            <li class="flex flex-row gap-6 items-center">
+            <li class="flex flex-row gap-4 md:gap-6 items-center">
               <Illustrator />
               <p>Illustrator</p>
             </li>
-            <li class="flex flex-row gap-6 items-center">
+            <li class="flex flex-row gap-4 md:gap-6 items-center">
               <Photoshop />
               <p>Photoshop</p>
             </li>
@@ -335,8 +354,9 @@ import Github from "./Icons/Github.astro";
         </div>
       </div>
       <button
-        onclick="document.getElementById('projectDrawer2').classList.toggle('translate-y-full'); document.getElementById('drawerOverlay2').classList.toggle('hidden')"
-        class="bg-zinc-800 text-white px-4 py-2 hover:bg-zinc-700 transition-colors w-full text-start flex flex-row gap-2 items-center"
+        data-drawer="projectDrawer2"
+        data-overlay="drawerOverlay2"
+        class="bg-zinc-800 text-white text-sm md:text-base px-3 md:px-4 py-2 md:py-3 mt-4 md:mt-6 hover:bg-zinc-700 transition-colors w-full text-start flex flex-row gap-2 items-center rounded-md"
       >
         <MoreInfo />
         More Info
@@ -346,7 +366,7 @@ import Github from "./Icons/Github.astro";
       <div
         id="drawerOverlay2"
         class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm hidden z-40"
-        onclick="document.getElementById('projectDrawer2').classList.add('translate-y-full'); this.classList.add('hidden')"
+        data-close-overlay="drawerOverlay2"
       >
       </div>
 
@@ -354,9 +374,11 @@ import Github from "./Icons/Github.astro";
       <div
         id="projectDrawer2"
         class="fixed bottom-0 left-0 w-full bg-zinc-900 transform translate-y-full transition-transform duration-300 ease-in-out p-8 shadow-lg z-50"
+        data-close-drawer="projectDrawer2"
       >
         <button
-          onclick="document.getElementById('projectDrawer2').classList.add('translate-y-full'); document.getElementById('drawerOverlay2').classList.add('hidden')"
+          data-close-drawer="projectDrawer2"
+          data-close-overlay="drawerOverlay2"
           class="absolute top-4 right-4 text-white hover:text-gray-300"
         >
           <svg
@@ -443,7 +465,7 @@ import Github from "./Icons/Github.astro";
   >
     <div class="bg-zinc-900 rounded-2xl p-8 w-full max-w-5xl mx-4 relative">
       <button
-        onclick="document.getElementById('projectModal3').classList.add('hidden')"
+        data-close-modal="projectModal3"
         class="absolute top-4 right-4 text-white hover:text-gray-300"
       >
         <svg
@@ -500,7 +522,8 @@ import Github from "./Icons/Github.astro";
         </div>
       </div>
       <button
-        onclick="document.getElementById('projectDrawer3').classList.toggle('translate-y-full'); document.getElementById('drawerOverlay3').classList.toggle('hidden')"
+        data-drawer="projectDrawer3"
+        data-overlay="drawerOverlay3"
         class="bg-zinc-800 text-white px-4 py-2 hover:bg-zinc-700 transition-colors w-full text-start flex flex-row gap-2 items-center"
       >
         <MoreInfo />
@@ -511,7 +534,7 @@ import Github from "./Icons/Github.astro";
       <div
         id="drawerOverlay3"
         class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm hidden z-40"
-        onclick="document.getElementById('projectDrawer3').classList.add('translate-y-full'); this.classList.add('hidden')"
+        data-close-overlay="drawerOverlay3"
       >
       </div>
 
@@ -519,9 +542,11 @@ import Github from "./Icons/Github.astro";
       <div
         id="projectDrawer3"
         class="fixed bottom-0 left-0 w-full bg-zinc-900 transform translate-y-full transition-transform duration-300 ease-in-out p-8 shadow-lg z-50"
+        data-close-drawer="projectDrawer3"
       >
         <button
-          onclick="document.getElementById('projectDrawer3').classList.add('translate-y-full'); document.getElementById('drawerOverlay3').classList.add('hidden')"
+          data-close-drawer="projectDrawer3"
+          data-close-overlay="drawerOverlay3"
           class="absolute top-4 right-4 text-white hover:text-gray-300"
         >
           <svg
@@ -601,3 +626,106 @@ import Github from "./Icons/Github.astro";
     </div>
   </div>
 </section>
+
+<script>
+  // Función para cerrar todos los modales
+  function closeAllModals() {
+    const modals = ["projectModal", "projectModal2", "projectModal3"];
+    modals.forEach((modalId) => {
+      document.getElementById(modalId)?.classList.add("hidden");
+    });
+  }
+
+  // Función para cerrar todos los drawers y overlays
+  function closeAllDrawers() {
+    const drawers = ["projectDrawer", "projectDrawer2", "projectDrawer3"];
+    const overlays = ["drawerOverlay", "drawerOverlay2", "drawerOverlay3"];
+
+    drawers.forEach((drawerId) => {
+      const drawer = document.getElementById(drawerId);
+      if (drawer) {
+        drawer.classList.add("translate-y-full");
+        drawer.classList.remove("translate-y-0");
+      }
+    });
+
+    overlays.forEach((overlayId) => {
+      document.getElementById(overlayId)?.classList.add("hidden");
+    });
+  }
+
+  // Modificar los onclick de los botones de proyecto
+  document.querySelectorAll("[data-project]").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const modalId = button.getAttribute("data-project");
+      if (modalId) {
+        closeAllModals();
+        closeAllDrawers();
+        document.getElementById(modalId)?.classList.remove("hidden");
+      }
+    });
+  });
+
+  // Modificar los onclick de los botones de drawer
+  document.querySelectorAll("[data-drawer]").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const drawerId = button.getAttribute("data-drawer");
+      const overlayId = button.getAttribute("data-overlay");
+      if (drawerId && overlayId) {
+        closeAllDrawers();
+        const drawer = document.getElementById(drawerId);
+        const overlay = document.getElementById(overlayId);
+        if (drawer && overlay) {
+          drawer.classList.remove("translate-y-full");
+          drawer.classList.add("translate-y-0");
+          overlay.classList.remove("hidden");
+        }
+      }
+    });
+  });
+
+  // Modificar los onclick de los botones de cierre
+  document.querySelectorAll("[data-close-modal]").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const modalId = button.getAttribute("data-close-modal");
+      if (modalId) {
+        document.getElementById(modalId)?.classList.add("hidden");
+        closeAllDrawers();
+      }
+    });
+  });
+
+  // Modificar los onclick de los botones de cierre de drawer
+  document.querySelectorAll("[data-close-drawer]").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const drawerId = button.getAttribute("data-close-drawer");
+      const overlayId = button.getAttribute("data-close-overlay");
+      if (drawerId && overlayId) {
+        const drawer = document.getElementById(drawerId);
+        const overlay = document.getElementById(overlayId);
+        if (drawer && overlay) {
+          drawer.classList.add("translate-y-full");
+          drawer.classList.remove("translate-y-0");
+          overlay.classList.add("hidden");
+        }
+      }
+    });
+  });
+
+  // Cerrar drawers al hacer clic en el overlay
+  document.querySelectorAll("[data-close-overlay]").forEach((overlay) => {
+    overlay.addEventListener("click", (e) => {
+      const drawerId = overlay
+        .getAttribute("data-close-overlay")
+        ?.replace("drawerOverlay", "projectDrawer");
+      if (drawerId) {
+        const drawer = document.getElementById(drawerId);
+        if (drawer) {
+          drawer.classList.add("translate-y-full");
+          drawer.classList.remove("translate-y-0");
+          overlay.classList.add("hidden");
+        }
+      }
+    });
+  });
+</script>

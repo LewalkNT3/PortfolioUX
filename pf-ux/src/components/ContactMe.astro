@@ -6,128 +6,131 @@ import Phone from "../components/Icons/Phone.astro";
 
 <section
   id="contact"
-  class="bg-[#202120] flex flex-col justify-center items-center min-h-screen w-full py-16 px-4"
+  class="bg-[#202120] flex flex-col justify-center items-center w-full py-12 md:py-16 px-4"
 >
-  <div
-    class="w-full max-w-6xl flex flex-col md:flex-row justify-between items-center gap-12"
-  >
-    <!-- Form Section -->
-    <div
-      class="w-full md:w-1/2 flex flex-col justify-center items-center gap-8"
-    >
-      <div>
-        <h1
-          class="text-white text-4xl md:text-5xl font-bold text-center md:text-left"
-        >
-          Contact Me
-        </h1>
-      </div>
-      <form id="contact-form" class="w-full">
-        <div class="flex flex-col gap-4">
-          <div class="flex flex-col md:flex-row gap-4">
-            <div
-              data-aos="fade-bottom"
-              data-aos-delay="200"
-              class="flex flex-col gap-2 w-full"
-            >
-              <label class="text-white" for="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                class="bg-gray-200 border-2 border-white rounded-md p-2 w-full"
-                placeholder="Name"
-              />
-            </div>
-            <div
-              data-aos="fade-bottom"
-              data-aos-delay="200"
-              class="flex flex-col gap-2 w-full"
-            >
-              <label class="text-white" for="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                class="bg-gray-200 border-2 border-white rounded-md p-2 w-full"
-                placeholder="Email"
-              />
-            </div>
-          </div>
-          <div
-            data-aos="fade-bottom"
-            data-aos-delay="300"
-            class="flex flex-col gap-2 w-full"
-          >
-            <label class="text-white" for="message">Message</label>
-            <textarea
-              name="message"
-              id="message"
-              required
-              class="bg-gray-200 border-2 border-white rounded-md h-[140px] p-4 w-full"
-              placeholder="Message"></textarea>
-          </div>
-          <button
-            data-aos="fade-bottom"
-            data-aos-delay="200"
-            type="submit"
-            class="bg-gray-200 text-black rounded-md p-3 hover:bg-gray-300 transition-all duration-300 transform hover:scale-105 w-full md:w-auto"
-          >
-            Send Message
-          </button>
-        </div>
-      </form>
-    </div>
+  <div class="w-full max-w-6xl flex flex-col gap-8 md:gap-12">
+    <h1 class="text-white text-3xl md:text-5xl font-bold text-center">
+      Contact Me
+    </h1>
 
-    <!-- Contact Info Section -->
-    <div
-      class="w-full md:w-1/2 flex flex-col justify-center items-center md:items-end gap-8"
-    >
-      <div class="w-full md:w-auto">
-        <h2
-          class="text-white text-2xl md:text-3xl font-bold mb-6 text-center md:text-right"
-        >
-          Get in Touch
-        </h2>
-        <ul class="flex flex-col gap-6">
-          <li
-            data-aos="fade-left"
-            data-aos-delay="200"
-            class="flex flex-row gap-3 justify-center md:justify-end items-center"
-          >
-            <Linkedin />
-            <a
-              class="text-white hover:text-gray-300 transition-colors"
-              href="https://www.linkedin.com/in/nacho-magurno-510757309/"
-              >Linkedin</a
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-20">
+      <!-- Form Section -->
+      <div class="w-full lg:w-3/5">
+        <form id="contact-form" class="w-full">
+          <div class="flex flex-col gap-4 md:gap-6">
+            <div class="flex flex-col sm:flex-row gap-4">
+              <div
+                data-aos="fade-up"
+                data-aos-delay="200"
+                class="flex flex-col gap-2 w-full"
+              >
+                <label class="text-white text-sm" for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="bg-zinc-800 text-white border border-zinc-700 rounded-md p-3 w-full focus:border-white focus:outline-none transition-colors"
+                  placeholder="Your name"
+                />
+              </div>
+              <div
+                data-aos="fade-up"
+                data-aos-delay="200"
+                class="flex flex-col gap-2 w-full"
+              >
+                <label class="text-white text-sm" for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  class="bg-zinc-800 text-white border border-zinc-700 rounded-md p-3 w-full focus:border-white focus:outline-none transition-colors"
+                  placeholder="your@email.com"
+                />
+              </div>
+            </div>
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              class="flex flex-col gap-2 w-full"
             >
-          </li>
-          <li
-            data-aos="fade-left"
-            data-aos-delay="300"
-            class="flex flex-row gap-3 justify-center md:justify-end items-center"
-          >
-            <Phone />
-            <a
-              class="text-white hover:text-gray-300 transition-colors"
-              href="tel:+5491123633818">(011) 2363-3818</a
+              <label class="text-white text-sm" for="message">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                required
+                class="bg-zinc-800 text-white border border-zinc-700 rounded-md h-[140px] p-3 w-full focus:border-white focus:outline-none transition-colors resize-none"
+                placeholder="Write your message here..."></textarea>
+            </div>
+            <button
+              data-aos="fade-up"
+              data-aos-delay="400"
+              type="submit"
+              class="bg-white text-black font-medium rounded-md py-3 px-6 hover:bg-gray-200 transition-all duration-300 transform hover:scale-[1.02] w-full sm:w-auto"
             >
-          </li>
-          <li
-            data-aos="fade-left"
-            data-aos-delay="400"
-            class="flex flex-row gap-3 justify-center md:justify-end items-center"
-          >
-            <Mail />
-            <a
-              class="text-white hover:text-gray-300 transition-colors"
-              href="mailto:ignaciomagurno02@gmail.com"
-              >ignaciomagurno02@gmail.com</a
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Contact Info Section -->
+      <div class="w-full lg:w-2/5 flex flex-col gap-6">
+        <div class="w-full">
+          <h2 class="text-white text-xl md:text-2xl font-bold mb-6">
+            Get in Touch
+          </h2>
+          <ul class="flex flex-col gap-4 md:gap-6">
+            <li
+              data-aos="fade-up"
+              data-aos-delay="200"
+              class="flex flex-row gap-4 items-center group"
             >
-          </li>
-        </ul>
+              <div
+                class="p-2 md:p-3 bg-zinc-800 rounded-full group-hover:bg-zinc-700 transition-colors"
+              >
+                <Linkedin />
+              </div>
+              <a
+                class="text-white hover:text-gray-300 transition-colors text-sm md:text-base"
+                href="https://www.linkedin.com/in/nacho-magurno-510757309/"
+                >Linkedin</a
+              >
+            </li>
+            <li
+              data-aos="fade-up"
+              data-aos-delay="300"
+              class="flex flex-row gap-4 items-center group"
+            >
+              <div
+                class="p-2 md:p-3 bg-zinc-800 rounded-full group-hover:bg-zinc-700 transition-colors"
+              >
+                <Phone />
+              </div>
+              <a
+                class="text-white hover:text-gray-300 transition-colors text-sm md:text-base"
+                href="tel:+5491123633818">(011) 2363-3818</a
+              >
+            </li>
+            <li
+              data-aos=""
+              data-aos-delay="400"
+              class="flex flex-row gap-4 items-center group"
+            >
+              <div
+                class="p-2 md:p-3 bg-zinc-800 rounded-full group-hover:bg-zinc-700 transition-colors"
+              >
+                <Mail />
+              </div>
+              <a
+                class="text-white hover:text-gray-300 transition-colors text-sm md:text-base break-all"
+                href="mailto:ignaciomagurno02@gmail.com"
+                >ignaciomagurno02@gmail.com</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
