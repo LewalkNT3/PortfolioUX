@@ -5,8 +5,13 @@
 <nav
   class="w-screen flex justify-center items-center p-5 sticky top-0 z-50 backdrop-blur-sm bg-white/10"
 >
-  <div class="flex justify-between">
-    <ul class="flex flex-row gap-22">
+  <div class="flex justify-between w-full max-w-7xl px-4">
+    <div class="flex items-center">
+      <a href="/" class="text-xl font-bold">IM</a>
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex flex-row gap-8">
       <li>
         <a
           class="font-light hover:text-gray-600 hover:underline transition-all duration-300 transform hover:scale-105"
@@ -26,5 +31,51 @@
         >
       </li>
     </ul>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="md:hidden">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-40 md:hidden">
+    <div class="flex flex-col items-center justify-center h-full space-y-8">
+      <a class="text-xl font-light hover:text-gray-600" href="#work">Work</a>
+      <a class="text-xl font-light hover:text-gray-600" href="#about-me"
+        >About</a
+      >
+      <a class="text-xl font-light hover:text-gray-600" href="#contact"
+        >Contact</a
+      >
+    </div>
   </div>
 </nav>
+
+<script>
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  mobileMenuButton?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+  });
+
+  // Close mobile menu when clicking a link
+  const mobileLinks = mobileMenu?.querySelectorAll("a");
+  mobileLinks?.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+    });
+  });
+</script>

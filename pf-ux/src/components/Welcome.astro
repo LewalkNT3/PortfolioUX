@@ -1,14 +1,14 @@
 ---
-
+import Download from "./Icons/Download.astro";
 ---
 
 <div
-  class="flex flex-col justify-center h-screen max-w-[725px] py- mx-auto gap-2"
+  class="flex flex-col justify-center min-h-screen max-w-[725px] mx-auto px-4 py-8 md:py-0 gap-4"
 >
   <div>
     <div data-aos="fade-bottom" data-aos-delay="200">
-      <h1 class="text-5xl font-bold font-inter py-3 text-pretty">
-        Hello, Im <span
+      <h1 class="text-4xl md:text-5xl font-bold font-inter py-3 text-pretty">
+        Hello, I'm <span
           data-aos="fade-left"
           data-aos-delay="300"
           class="text-blue-700">Ignacio Magurno</span
@@ -16,7 +16,7 @@
       </h1>
     </div>
     <div data-aos="fade-bottom" data-aos-delay="200">
-      <p class="text-pretty text-gray-500 text-xl max-w-[750px]">
+      <p class="text-pretty text-gray-500 text-lg md:text-xl max-w-[750px]">
         I transform digital products into compelling brand experiences that
         deliver impact
       </p>
@@ -25,18 +25,21 @@
   <div
     data-aos="fade-bottom"
     data-aos-delay="200"
-    class="py-3 flex flex-row gap-3"
+    class="py-3 flex flex-col sm:flex-row gap-3"
   >
     <a
       href="#contact"
-      class="bg-black hover:bg-gray-800 cursor-pointer text-white px-3 py-3 rounded-md transition-all duration-300 transform hover:scale-105"
+      class="flex justify-center items-center bg-black hover:bg-gray-800 cursor-pointer text-white px-6 py-3 rounded-md transition-all duration-300 transform hover:scale-105"
     >
       contact me!
     </a>
     <a
-      class="bg-transparent cursor-pointer text-black px-3 py-3 rounded-md font-light hover:underline transition-all duration-300 transform hover:scale-105"
+      href="/resume.pdf"
+      download="resume.pdf"
+      class="border flex flex-row items-center justify-center gap-2 bg-transparent cursor-pointer text-black px-6 py-3 rounded-md font-light transition-all duration-300 transform hover:scale-105"
     >
       Resume
+      <Download />
     </a>
   </div>
 </div>

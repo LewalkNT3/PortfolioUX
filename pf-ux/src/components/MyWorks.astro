@@ -1,5 +1,10 @@
 ---
-
+import Figma from "./Icons/Figma.astro";
+import Illustrator from "./Icons/Illustrator.astro";
+import Photoshop from "./Icons/Photoshop.astro";
+import MoreInfo from "./Icons/MoreInfo.astro";
+import Link from "./Icons/Link.astro";
+import Github from "./Icons/Github.astro";
 ---
 
 <section
@@ -8,32 +13,590 @@
 >
   <div class="max-w-7xl w-full flex items-center justify-center flex-col">
     <h1
-      class="text-white text-5xl font-bold mb-12 text-center"
+      class="text-white text-4xl md:text-5xl font-bold mb-12 text-center"
       data-aos="fade-down"
     >
       My Works
     </h1>
-    <div class="grid grid-cols-5 grid-rows-5 gap-6 h-[500px] w-[75%]">
+    <!-- Desktop Grid -->
+    <div class="hidden md:grid grid-cols-5 grid-rows-5 gap-6 h-[500px] w-[65%]">
       <div
         data-aos="fade-right"
         data-aos-delay="200"
-        class="col-span-3 row-span-3 rounded-2xl bg-zinc-900 border border-zinc-800 p-6 transition-all hover:border-zinc-600 flex items-center justify-center"
+        class="col-span-3 row-span-3 rounded-2xl bg-zinc-900 border border-zinc-800 transition-all hover:border-zinc-600 flex items-center justify-center cursor-pointer relative group"
+        onclick="document.getElementById('projectModal').classList.remove('hidden')"
       >
-        <p class="text-white text-2xl font-bold">Noseq</p>
+        <img
+          src="/TrynessfotoEj.png"
+          class="w-full h-full object-cover object-top rounded-2xl transition-all duration-300 group-hover:brightness-50"
+        />
+        <div
+          class="absolute inset-0 flex items-end justify-start mb-5 ml-5 opacity-0 group-hover:opacity-105 transition-opacity duration-300"
+        >
+          <h3 class="text-white text-6xl font-bold">Tryness</h3>
+        </div>
       </div>
       <div
         data-aos="fade-right"
         data-aos-delay="400"
-        class="col-span-3 row-span-2 col-start-1 row-start-4 rounded-2xl bg-zinc-900 border border-zinc-800 p-6 transition-all hover:border-zinc-600 flex items-center justify-center"
+        class="col-span-3 row-span-2 col-start-1 row-start-4 rounded-2xl bg-zinc-900 border border-zinc-800 transition-all hover:border-zinc-600 flex items-center justify-center cursor-pointer relative group"
+        onclick="document.getElementById('projectModal2').classList.remove('hidden')"
       >
-        <p class="text-white text-2xl font-bold">Tryness</p>
+        <img
+          src="NoseAI.png"
+          class="w-full h-full object-cover rounded-2xl transition-all duration-300 group-hover:brightness-50"
+        />
+        <div
+          class="absolute inset-0 flex items-end justify-start mb-5 ml-5 opacity-0 group-hover:opacity-105 transition-opacity duration-300"
+        >
+          <h3 class="text-white text-6xl font-bold">NoseAI</h3>
+        </div>
       </div>
       <div
         data-aos="fade-left"
         data-aos-delay="600"
-        class="col-span-2 row-span-5 col-start-4 row-start-1 rounded-2xl bg-zinc-900 border border-zinc-800 p-6 transition-all hover:border-zinc-600 flex items-center justify-center"
+        class="col-span-2 row-span-5 col-start-4 row-start-1 rounded-2xl bg-zinc-900 border border-zinc-800 p-6 transition-all hover:border-zinc-600 flex items-center justify-center cursor-pointer relative group"
+        onclick="document.getElementById('projectModal3').classList.remove('hidden')"
       >
-        <p class="text-white text-2xl font-bold">Natvik</p>
+        <div
+          class="w-full h-full bg-zinc-800 rounded-2xl transition-all duration-300 group-hover:brightness-50 flex items-center justify-center"
+        >
+          <h3 class="text-white text-4xl font-bold">Natvik</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Grid -->
+    <div class="md:hidden flex flex-col gap-6 w-full max-w-md">
+      <div
+        data-aos="fade-up"
+        data-aos-delay="200"
+        class="w-full aspect-[4/3] rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center cursor-pointer relative"
+        onclick="document.getElementById('projectModal').classList.remove('hidden')"
+      >
+        <img
+          src="/TrynessfotoEj.png"
+          class="w-full h-full object-cover rounded-2xl"
+        />
+        <h3 class="absolute bottom-5 left-5 text-white text-3xl font-bold">
+          Tryness
+        </h3>
+      </div>
+      <div
+        data-aos="fade-up"
+        data-aos-delay="400"
+        class="w-full aspect-[4/3] rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center cursor-pointer relative"
+        onclick="document.getElementById('projectModal2').classList.remove('hidden')"
+      >
+        <img src="NoseAI.png" class="w-full h-full object-cover rounded-2xl" />
+        <h3 class="absolute bottom-5 left-5 text-white text-3xl font-bold">
+          NoseAI
+        </h3>
+      </div>
+      <div
+        data-aos="fade-up"
+        data-aos-delay="600"
+        class="w-full aspect-[4/3] rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center cursor-pointer relative"
+        onclick="document.getElementById('projectModal3').classList.remove('hidden')"
+      >
+        <div
+          class="w-full h-full bg-zinc-800 rounded-2xl flex items-center justify-center"
+        >
+          <h3 class="text-white text-3xl font-bold">Natvik</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 1 -->
+  <div
+    id="projectModal"
+    class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm hidden z-50 flex items-center justify-center"
+  >
+    <div class="bg-zinc-900 rounded-2xl p-8 w-full max-w-5xl mx-4 relative">
+      <button
+        onclick="document.getElementById('projectModal').classList.add('hidden')"
+        class="absolute top-4 right-4 text-white hover:text-gray-300"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <h2 class="text-5xl font-bold text-white mt-5">Tryness Project</h2>
+      <div class="h-[1px] bg-zinc-800 w-full my-7"></div>
+      <div class="flex flex-row gap-10">
+        <img
+          src="/TrynessfotoEj.png"
+          class="w-full h-64 object-cover rounded-xl mb-6"
+        />
+        <div class="flex flex-col gap-4">
+          <label for="" class="font-bold text-white text-4xl">Description</label
+          >
+          <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+          <p class="text-gray-300 mb-4">
+            Description of the Tryness project goes here. You can add details
+            about the technologies used, the challenges faced, and the solutions
+            implemented.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4 mt-0">
+          <label for="" class="font-bold text-white text-4xl"
+            >Technologies</label
+          >
+          <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+          <ul class="text-white text-xl">
+            <li class="flex flex-row gap-6 items-center">
+              <Figma />
+              <p>Figma</p>
+            </li>
+            <li class="flex flex-row gap-6 items-center">
+              <Illustrator />
+              <p>Illustrator</p>
+            </li>
+            <li class="flex flex-row gap-6 items-center">
+              <Photoshop />
+              <p>Photoshop</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        onclick="document.getElementById('projectDrawer').classList.toggle('translate-y-full'); document.getElementById('drawerOverlay').classList.toggle('hidden')"
+        class="bg-zinc-800 text-white px-4 py-2 hover:bg-zinc-700 transition-colors w-full text-start flex flex-row gap-2 items-center"
+      >
+        <MoreInfo />
+        More Info
+      </button>
+
+      <!-- Drawer Overlay -->
+      <div
+        id="drawerOverlay"
+        class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm hidden z-40"
+        onclick="document.getElementById('projectDrawer').classList.add('translate-y-full'); this.classList.add('hidden')"
+      >
+      </div>
+
+      <!-- Drawer -->
+      <div
+        id="projectDrawer"
+        class="fixed bottom-0 left-0 w-full bg-zinc-900 transform translate-y-full transition-transform duration-300 ease-in-out p-8 shadow-lg z-50"
+      >
+        <button
+          onclick="document.getElementById('projectDrawer').classList.add('translate-y-full'); document.getElementById('drawerOverlay').classList.add('hidden')"
+          class="absolute top-4 right-4 text-white hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <h3 class="text-5xl font-bold text-white mb-2 self-start">
+          Project Details
+        </h3>
+        <div class="w-[45%] h-[1px] bg-zinc-800 my-5"></div>
+        <div class="space-y-4">
+          <div class="flex flex-row gap-10">
+            <div class="flex flex-col gap-4 w-[50%]">
+              <div>
+                <h4 class="text-xl font-semibold text-white">Timeline</h4>
+                <div class="w-[45%] h-[1px] bg-zinc-800"></div>
+                <div class="my-3">
+                  <p class="text-gray-300">Started: January 2023</p>
+                  <p class="text-gray-300">Completed: March 2023</p>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-white">Role</h4>
+                <div class="w-[45%] h-[1px] bg-zinc-800"></div>
+                <p class="text-gray-300 my-3">UI/UX Designer</p>
+              </div>
+              <div class="flex flex-row gap-10">
+                <div class="w-[80%]">
+                  <h4 class="text-xl font-semibold text-white">Key Features</h4>
+                  <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+                  <ul class="text-gray-300 list-disc list-inside my-3">
+                    <li>Responsive Design</li>
+                    <li>Modern UI Components</li>
+                    <li>User-Centered Approach</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="w-[50%] flex flex-col gap-4">
+              <div>
+                <h1 class="text-white text-xl font-bold">
+                  Detailed Description
+                </h1>
+                <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+                <p class="text-gray-300 text-sm my-6 w-[90%] text-balance">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam voluptates, quod, quia, voluptate quae voluptatibus
+                  quibusdam voluptatem quas quidem quos. Quisquam, voluptates.
+                  Quia, voluptate. Quisquam voluptates, quod, quia, voluptate
+                  quae voluptatibus quibusdam voluptatem quas quidem quos.
+                  Quisquam, voluptates. Quia, voluptate.
+                </p>
+              </div>
+              <div class="">
+                <h1 class="text-white text-xl font-bold">Links</h1>
+                <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+                <div class="flex flex-row gap-4 my-3">
+                  <a href="#" class="text-gray-300 text-sm"><Link /></a>
+                  <a href="#" class="text-gray-300 text-sm"><Github /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div
+    id="projectModal2"
+    class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm hidden z-50 flex items-center justify-center"
+  >
+    <div class="bg-zinc-900 rounded-2xl p-8 w-full max-w-5xl mx-4 relative">
+      <button
+        onclick="document.getElementById('projectModal2').classList.add('hidden')"
+        class="absolute top-4 right-4 text-white hover:text-gray-300"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <h2 class="text-5xl font-bold text-white mt-5">NoseAI Project</h2>
+      <div class="h-[1px] bg-zinc-800 w-full my-7"></div>
+      <div class="flex flex-row gap-10">
+        <img
+          src="NoseAI.png"
+          class="w-full h-48 object-cover rounded-xl mb-6"
+        />
+        <div class="flex flex-col gap-4">
+          <label for="" class="font-bold text-white text-4xl">Description</label
+          >
+          <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+          <p class="text-gray-300 mb-4">
+            Description of the NoseAI project goes here. You can add details
+            about the technologies used, the challenges faced, and the solutions
+            implemented.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4 mt-0">
+          <label for="" class="font-bold text-white text-4xl"
+            >Technologies</label
+          >
+          <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+          <ul class="text-white text-xl">
+            <li class="flex flex-row gap-6 items-center">
+              <Figma />
+              <p>Figma</p>
+            </li>
+            <li class="flex flex-row gap-6 items-center">
+              <Illustrator />
+              <p>Illustrator</p>
+            </li>
+            <li class="flex flex-row gap-6 items-center">
+              <Photoshop />
+              <p>Photoshop</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        onclick="document.getElementById('projectDrawer2').classList.toggle('translate-y-full'); document.getElementById('drawerOverlay2').classList.toggle('hidden')"
+        class="bg-zinc-800 text-white px-4 py-2 hover:bg-zinc-700 transition-colors w-full text-start flex flex-row gap-2 items-center"
+      >
+        <MoreInfo />
+        More Info
+      </button>
+
+      <!-- Drawer Overlay 2 -->
+      <div
+        id="drawerOverlay2"
+        class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm hidden z-40"
+        onclick="document.getElementById('projectDrawer2').classList.add('translate-y-full'); this.classList.add('hidden')"
+      >
+      </div>
+
+      <!-- Drawer 2 -->
+      <div
+        id="projectDrawer2"
+        class="fixed bottom-0 left-0 w-full bg-zinc-900 transform translate-y-full transition-transform duration-300 ease-in-out p-8 shadow-lg z-50"
+      >
+        <button
+          onclick="document.getElementById('projectDrawer2').classList.add('translate-y-full'); document.getElementById('drawerOverlay2').classList.add('hidden')"
+          class="absolute top-4 right-4 text-white hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <h3 class="text-5xl font-bold text-white mb-2 self-start">
+          Project Details
+        </h3>
+        <div class="w-[45%] h-[1px] bg-zinc-800 my-5"></div>
+        <div class="space-y-4">
+          <div class="flex flex-row gap-10">
+            <div class="flex flex-col gap-4 w-[50%]">
+              <div>
+                <h4 class="text-xl font-semibold text-white">Timeline</h4>
+                <div class="w-[45%] h-[1px] bg-zinc-800"></div>
+                <div class="my-3">
+                  <p class="text-gray-300">Started: January 2023</p>
+                  <p class="text-gray-300">Completed: March 2023</p>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-white">Role</h4>
+                <div class="w-[45%] h-[1px] bg-zinc-800"></div>
+                <p class="text-gray-300 my-3">UI/UX Designer</p>
+              </div>
+              <div class="flex flex-row gap-10">
+                <div class="w-[80%]">
+                  <h4 class="text-xl font-semibold text-white">Key Features</h4>
+                  <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+                  <ul class="text-gray-300 list-disc list-inside my-3">
+                    <li>Responsive Design</li>
+                    <li>Modern UI Components</li>
+                    <li>User-Centered Approach</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="w-[50%] flex flex-col gap-4">
+              <div>
+                <h1 class="text-white text-xl font-bold">
+                  Detailed Description
+                </h1>
+                <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+                <p class="text-gray-300 text-sm my-6 w-[90%] text-balance">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam voluptates, quod, quia, voluptate quae voluptatibus
+                  quibusdam voluptatem quas quidem quos. Quisquam, voluptates.
+                  Quia, voluptate. Quisquam voluptates, quod, quia, voluptate
+                  quae voluptatibus quibusdam voluptatem quas quidem quos.
+                  Quisquam, voluptates. Quia, voluptate.
+                </p>
+              </div>
+              <div class="">
+                <h1 class="text-white text-xl font-bold">Links</h1>
+                <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+                <div class="flex flex-row gap-4 my-3">
+                  <a href="#" class="text-gray-300 text-sm"><Link /></a>
+                  <a href="#" class="text-gray-300 text-sm"><Github /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div
+    id="projectModal3"
+    class="fixed inset-0 bg-black bg-opacity-75 backdrop-blur-sm hidden z-50 flex items-center justify-center"
+  >
+    <div class="bg-zinc-900 rounded-2xl p-8 w-full max-w-5xl mx-4 relative">
+      <button
+        onclick="document.getElementById('projectModal3').classList.add('hidden')"
+        class="absolute top-4 right-4 text-white hover:text-gray-300"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <h2 class="text-5xl font-bold text-white mt-5">Natvik Project</h2>
+      <div class="h-[1px] bg-zinc-800 w-full my-7"></div>
+      <div class="flex flex-row gap-10">
+        <div
+          class="w-full h-64 bg-zinc-800 rounded-xl mb-6 flex items-center justify-center"
+        >
+          <p class="text-white text-2xl">Project Preview</p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <label for="" class="font-bold text-white text-4xl">Description</label
+          >
+          <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+          <p class="text-gray-300 mb-4">
+            Description of the Natvik project goes here. You can add details
+            about the technologies used, the challenges faced, and the solutions
+            implemented.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4 mt-0">
+          <label for="" class="font-bold text-white text-4xl"
+            >Technologies</label
+          >
+          <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+          <ul class="text-white text-xl">
+            <li class="flex flex-row gap-6 items-center">
+              <Figma />
+              <p>Figma</p>
+            </li>
+            <li class="flex flex-row gap-6 items-center">
+              <Illustrator />
+              <p>Illustrator</p>
+            </li>
+            <li class="flex flex-row gap-6 items-center">
+              <Photoshop />
+              <p>Photoshop</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button
+        onclick="document.getElementById('projectDrawer3').classList.toggle('translate-y-full'); document.getElementById('drawerOverlay3').classList.toggle('hidden')"
+        class="bg-zinc-800 text-white px-4 py-2 hover:bg-zinc-700 transition-colors w-full text-start flex flex-row gap-2 items-center"
+      >
+        <MoreInfo />
+        More Info
+      </button>
+
+      <!-- Drawer Overlay 3 -->
+      <div
+        id="drawerOverlay3"
+        class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm hidden z-40"
+        onclick="document.getElementById('projectDrawer3').classList.add('translate-y-full'); this.classList.add('hidden')"
+      >
+      </div>
+
+      <!-- Drawer 3 -->
+      <div
+        id="projectDrawer3"
+        class="fixed bottom-0 left-0 w-full bg-zinc-900 transform translate-y-full transition-transform duration-300 ease-in-out p-8 shadow-lg z-50"
+      >
+        <button
+          onclick="document.getElementById('projectDrawer3').classList.add('translate-y-full'); document.getElementById('drawerOverlay3').classList.add('hidden')"
+          class="absolute top-4 right-4 text-white hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <h3 class="text-5xl font-bold text-white mb-2 self-start">
+          Project Details
+        </h3>
+        <div class="w-[45%] h-[1px] bg-zinc-800 my-5"></div>
+        <div class="space-y-4">
+          <div class="flex flex-row gap-10">
+            <div class="flex flex-col gap-4 w-[50%]">
+              <div>
+                <h4 class="text-xl font-semibold text-white">Timeline</h4>
+                <div class="w-[45%] h-[1px] bg-zinc-800"></div>
+                <div class="my-3">
+                  <p class="text-gray-300">Started: January 2023</p>
+                  <p class="text-gray-300">Completed: March 2023</p>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xl font-semibold text-white">Role</h4>
+                <div class="w-[45%] h-[1px] bg-zinc-800"></div>
+                <p class="text-gray-300 my-3">UI/UX Designer</p>
+              </div>
+              <div class="flex flex-row gap-10">
+                <div class="w-[80%]">
+                  <h4 class="text-xl font-semibold text-white">Key Features</h4>
+                  <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+                  <ul class="text-gray-300 list-disc list-inside my-3">
+                    <li>Responsive Design</li>
+                    <li>Modern UI Components</li>
+                    <li>User-Centered Approach</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="w-[50%] flex flex-col gap-4">
+              <div>
+                <h1 class="text-white text-xl font-bold">
+                  Detailed Description
+                </h1>
+                <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+                <p class="text-gray-300 text-sm my-6 w-[90%] text-balance">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam voluptates, quod, quia, voluptate quae voluptatibus
+                  quibusdam voluptatem quas quidem quos. Quisquam, voluptates.
+                  Quia, voluptate. Quisquam voluptates, quod, quia, voluptate
+                  quae voluptatibus quibusdam voluptatem quas quidem quos.
+                  Quisquam, voluptates. Quia, voluptate.
+                </p>
+              </div>
+              <div class="">
+                <h1 class="text-white text-xl font-bold">Links</h1>
+                <div class="w-[55%] h-[1px] bg-zinc-800"></div>
+                <div class="flex flex-row gap-4 my-3">
+                  <a href="#" class="text-gray-300 text-sm"><Link /></a>
+                  <a href="#" class="text-gray-300 text-sm"><Github /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,9 +1,62 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-body {
-  background-color: #fbfaee;
+:root {
+  --max-width: 1200px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  background-color: #fbfaee;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsive container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Responsive typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+
+/* Responsive spacing */
+section {
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 6rem 2rem;
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }
